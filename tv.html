@@ -2,26 +2,40 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Eco TV - News & Mediathek</title>
-    <link rel="stylesheet" href="style.css"> <style>
-        /* CSS hier identisch zu index.html, zusätzlich: */
-        .video-placeholder { background: #000; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white; border-radius: 8px; }
+    <title>Eco TV | Mediathek</title>
+    <style>
+        .video-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        .play-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0,0,0,0.4);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .play-overlay:hover { background: rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
-<div class="container">
-    <h2 style="text-transform: uppercase;">Eco TV Live-Stream</h2>
-    <div class="video-placeholder">
-        <div style="text-align: center;">
-            <div style="font-size: 50px;">▶</div>
-            <p>LIVE-STREAM STARTEN</p>
+    <div class="container" style="padding: 50px 5%;">
+        <h1>Eco TV <span style="color: var(--accent);">Live</span></h1>
+        <div class="video-container">
+            <div style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                <div class="play-overlay">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 30px;">▶</div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1000" style="width: 100%; object-fit: cover; opacity: 0.5;">
+            </div>
         </div>
     </div>
-    <div style="margin-top: 30px;">
-        <h3>Aktuelle Meldungen</h3>
-        <p>• Neue Dokumentation über das Saarland ab morgen verfügbar.</p>
-        <p>• Eco News: Sondersendung um 18:00 Uhr.</p>
-    </div>
-</div>
 </body>
 </html>
