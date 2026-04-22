@@ -1,60 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoStudios</title>
-  <style>
-    body { margin:0; font-family:Segoe UI, sans-serif; background:#000; color:#fff; }
-    header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; border-bottom:1px solid #222; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; }
-    nav a:hover { color:#aaa; }
-    .container { padding:60px 40px; }
-    h1,h2,h3 { margin-top:0; }
-    .cards { display:flex; gap:20px; flex-wrap:wrap; }
-    .card { background:#111; padding:20px; border-radius:10px; flex:1; min-width:250px; }
-    .btn { display:inline-block; margin-top:10px; padding:10px 20px; background:#fff; color:#000; text-decoration:none; border-radius:5px; }
-    iframe { width:100%; height:400px; border:none; border-radius:10px; }
-    footer { text-align:center; padding:20px; border-top:1px solid #222; color:#777; }
-  </style>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoStudios</title>
 
-<header>
-  <h2>EcoStudios</h2>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="radio.html">Radio</a>
-    <a href="tv.html">TV</a>
-    <a href="movies.html">Movies</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+<style>
+body { margin:0; font-family:Segoe UI, sans-serif; background:#000; color:#fff; }
 
-<div class="container">
-  <h1>Welcome to EcoStudios</h1>
-  <p>Your hub for Radio, TV Broadcasting, and Film Production.</p>
+/* NAVBAR */
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:#0a0a0a;
+  border-bottom:1px solid #222;
+}
 
-  <div class="cards">
-    <div class="card">
-      <h3>📻 Radio</h3>
-      <p>Listen live to our station.</p>
-      <a href="radio.html" class="btn">Go to Radio</a>
-    </div>
-    <div class="card">
-      <h3>📺 TV</h3>
-      <p>Watch live TV and shows.</p>
-      <a href="tv.html" class="btn">Watch TV</a>
-    </div>
-    <div class="card">
-      <h3>🎬 Movies</h3>
-      <p>Explore our productions.</p>
-      <a href="movies.html" class="btn">View Movies</a>
-    </div>
-  </div>
-</div>
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-<footer>© 2026 EcoStudios</footer>
+.logo img {
+  height:40px;
+}
 
-</body>
-</html>
+nav a {
+  color:#fff;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:14px;
+  opacity:0.8;
+}
+
+nav a:hover { opacity:1; }
+
+/* HERO */
+.hero {
+  padding:40px;
+}
+
+.hero h1 { font-size:32px; }
+
+/* GRID NEWS STYLE */
+.grid {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  padding:40px;
+}
+
+.main-card {
+  position:relative;
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.main-card img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.7;
+}
+
+.main-card .content {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+}
+
+.side-card {
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  padding:0 40px 40px;
+}
+
+.card {
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.card img {
+  width:100%;
+}
