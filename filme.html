@@ -1,16 +1,24 @@
-<div class="container" style="text-align: center;">
-    <img src="Logo.png" alt="Eco Studio" style="max-width: 200px; margin-bottom: 20px;">
-    <h2 style="text-transform: uppercase;">Aktuelle Produktionen</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-        <div style="background: #eee; height: 300px; display: flex; align-items: center; justify-content: center;">
-            <strong>Film-Poster 1</strong>
-        </div>
-        <div style="background: #eee; height: 300px; display: flex; align-items: center; justify-content: center;">
-            <strong>Film-Poster 2</strong>
-        </div>
-        <div style="background: #eee; height: 300px; display: flex; align-items: center; justify-content: center;">
-            <strong>Film-Poster 3</strong>
-        </div>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoStudios - Filme</title>
+    <style>
+        /* CSS identisch zu index.html */
+        .movie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .movie-poster { background: #333; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-transform: uppercase; border: 2px solid black; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <img src="Logo.png" style="height: 100px;"> <h1>Produktionen</h1>
+    </div>
+    <div class="movie-grid">
+        <div class="movie-poster">Coming Soon</div>
+        <div class="movie-poster">In Produktion</div>
+        <div class="movie-poster">Eco Originals</div>
     </div>
 </div>
+</body>
+</html>
