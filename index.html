@@ -1,97 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoStudios</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStudios - Broadcasting & Productions</title>
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+            --accent: #333333;
+        }
 
-<style>
-body { margin:0; font-family:Segoe UI, sans-serif; background:#000; color:#fff; }
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+        }
 
-/* NAVBAR */
-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px 40px;
-  background:#0a0a0a;
-  border-bottom:1px solid #222;
-}
+        /* TOP NAVIGATION (Vgl. SR.de oben) */
+        header {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--accent);
+        }
 
-.logo {
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+        .logo-main { height: 50px; }
 
-.logo img {
-  height:40px;
-}
+        nav.main-nav {
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid var(--black);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-nav a {
-  color:#fff;
-  text-decoration:none;
-  margin:0 15px;
-  font-size:14px;
-  opacity:0.8;
-}
+        .nav-item {
+            padding: 20px 25px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-nav a:hover { opacity:1; }
+        .nav-item:hover, .nav-item.active {
+            background-color: var(--black);
+            color: var(--white);
+        }
 
-/* HERO */
-.hero {
-  padding:40px;
-}
+        /* HERO SECTION */
+        .hero {
+            height: 60vh;
+            background: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-.hero h1 { font-size:32px; }
+        .hero-content h1 { font-size: 3.5rem; letter-spacing: 5px; margin: 0; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.7; }
 
-/* GRID NEWS STYLE */
-.grid {
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:20px;
-  padding:40px;
-}
+        /* GRID LAYOUT (Vgl. SR Website) */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.main-card {
-  position:relative;
-  background:#111;
-  border-radius:10px;
-  overflow:hidden;
-}
+        .card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-.main-card img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0.7;
-}
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-.main-card .content {
-  position:absolute;
-  bottom:20px;
-  left:20px;
-}
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.side-card {
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-}
+        .card-img img { max-width: 60%; }
 
-.cards {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-  padding:0 40px 40px;
-}
+        .card-body { padding: 20px; }
+        .card-body h3 { margin: 0 0 10px 0; text-transform: uppercase; }
 
-.card {
-  background:#111;
-  border-radius:10px;
-  overflow:hidden;
-}
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
 
-.card img {
-  width:100%;
-}
+        /* LIVE BAR (Rot für Radio) */
+        .live-bar {
+            background: #d64545;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="Logo.png" alt="EcoStudios" class="logo-main">
+    <div>BROADCASTING & MEDIA GROUP</div>
+</header>
+
+<nav class="main-nav">
+    <a href="index.html" class="nav-item active">Home</a>
+    <a href="radio.html" class="nav-item">NFFM Radio</a>
+    <a href="tv.html" class="nav-item">TV & News</a>
+    <a href="filme.html" class="nav-item">Movie Studio</a>
+</nav>
+
+<div class="live-bar">
+    LIVE: NFFM - Wir haben Character - Jetzt einschalten!
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>ECOSTUDIOS</h1>
+        <p>Innovation in Radio, TV and Motion Pictures</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="card" onclick="location.href='radio.html'">
+        <div class="card-img">
+            <img src="Herunterladen.png" alt="NFFM Radio">
+        </div>
+        <div class="card-body">
+            <h3>NFFM Radio</h3>
+            <p>Echte Musik, echte Typen. Das Radio für das Saarland und die Welt.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="location.href='tv.html'">
+        <div class="card-img" style="background: #222;">
+            <span style="color:white; font-size: 30px; font-weight: bold;">Eco TV</span>
+        </div>
+        <div class="card-body">
+            <h3>Eco TV & News</h3>
+            <p>Live-Berichterstattung, Dokumentationen und regionale Nachrichten.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="location.href='filme.html'">
+        <div class="card-img">
+            <img src="Logo.png" alt="EcoStudios">
+        </div>
+        <div class="card-body">
+            <h3>Movie Productions</h3>
+            <p>Von der Idee zum Blockbuster. Unser Filmstudio für kreative Visionen.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 EcoStudios Broadcasting. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
