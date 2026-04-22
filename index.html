@@ -3,179 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoStudios | Broadcasting & Vision</title>
+    <title>EcoStudios | Home</title>
     <style>
         :root {
-            --primary: #ffffff;
             --bg: #0a0a0a;
-            --card-bg: #161616;
+            --card-bg: #121212;
             --accent: #d64545;
-            --text-muted: #a0a0a0;
+            --text: #ffffff;
+            --text-dim: #a0a0a0;
         }
 
         body {
             margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
-            color: var(--primary);
-            line-height: 1.6;
+            color: var(--text);
         }
 
-        /* NAVIGATION */
-        nav {
+        /* TOPBAR ÜBERALL GLEICH */
+        .topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .nav-links { display: flex; gap: 30px; }
+        .logo-box img { height: 40px; }
+
+        .nav-links { display: flex; gap: 25px; }
         .nav-links a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 14px;
+            color: var(--text-dim);
+            font-size: 13px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a:hover, .nav-links a.active { color: var(--text); }
 
-        .logo { height: 45px; transition: transform 0.3s; }
-        .logo:hover { transform: scale(1.05); }
-
-        /* HERO SECTION */
+        /* HERO */
         .hero {
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 100px 20px 60px;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
-            padding: 0 20px;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 100%);
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -2px;
-            background: linear-gradient(to bottom, #fff 0%, #666 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .hero h1 { font-size: 3.5rem; margin: 0; letter-spacing: -1px; }
 
-        /* GRID SYSTEM */
-        .main-grid {
+        /* DIE VERBESSERTEN CARDS (WIE AUF DEM BILD) */
+        .grid-container {
             max-width: 1200px;
-            margin: -100px auto 50px;
+            margin: 0 auto 100px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             padding: 0 20px;
         }
 
-        .feature-card {
+        .modern-card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: #1c1c1c;
+        .modern-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(214, 69, 69, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .feature-card img {
-            width: 80px;
-            margin-bottom: 20px;
-            filter: grayscale(1) invert(1);
-        }
-
-        .feature-card h3 { margin: 0 0 10px; font-size: 22px; }
-        .feature-card p { color: var(--text-muted); font-size: 15px; }
-
-        .status-tag {
+        .badge {
             display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
+            padding: 5px 12px;
+            border-radius: 50px;
             font-size: 10px;
-            font-weight: bold;
+            font-weight: 800;
             text-transform: uppercase;
-            background: var(--accent);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        footer {
-            text-align: center;
-            padding: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 13px;
-        }
+        .card-icon { height: 60px; margin-bottom: 25px; display: block; }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-        }
+        .modern-card h3 { font-size: 24px; margin: 0 0 12px 0; }
+        .modern-card p { color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
 
-<nav>
-    <img src="Logo.png" alt="EcoStudios" class="logo">
+<div class="topbar">
+    <div class="logo-box"><img src="Logo.png" alt="EcoStudios"></div>
     <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="https://ecostudiosbroadcasting.github.io/NFFM-Radio/">Radio</a>
         <a href="tv.html">TV</a>
         <a href="filme.html">Studios</a>
     </div>
-</nav>
+</div>
 
 <section class="hero">
     <h1>ECOSTUDIOS</h1>
-    <p style="color: var(--text-muted); max-width: 600px;">The Next Generation of Broadcasting. Motion Pictures, Live Radio, and Digital News Hub.</p>
+    <p style="color: var(--text-dim);">Broadcasting. Productions. Vision.</p>
 </section>
 
-<main class="main-grid">
-    <div class="feature-card" onclick="location.href='https://ecostudiosbroadcasting.github.io/NFFM-Radio/'">
-        <span class="status-tag">Live On Air</span>
-        <img src="Herunterladen.png" alt="NFFM" style="filter: none;">
+<main class="grid-container">
+    <div class="modern-card" onclick="location.href='https://ecostudiosbroadcasting.github.io/NFFM-Radio/'">
+        <span class="badge" style="background: var(--accent);">Live on Air</span>
+        <img src="Herunterladen.png" class="card-icon" style="filter: none;">
         <h3>NFFM Radio</h3>
-        <p>Wir haben Character. Entdecke den besten Sound der Region im preisgekrönten Web-Player.</p>
+        <p>Entdecke den besten Sound der Region im neuen Web-Player. Wir haben Character.</p>
     </div>
 
-    <div class="feature-card" onclick="location.href='tv.html'">
-        <span class="status-tag" style="background: #333;">Mediathek</span>
-        <div style="font-size: 40px; margin-bottom: 20px;">🎬</div>
+    <div class="modern-card" onclick="location.href='tv.html'">
+        <span class="badge" style="background: #333;">Mediathek</span>
+        <div style="font-size: 40px; margin-bottom: 25px;">🎬</div>
         <h3>Eco TV</h3>
-        <p>Exklusive Nachrichten, Dokumentationen und Live-Events direkt auf deinen Screen.</p>
+        <p>Exklusive Nachrichten und Dokumentationen. Erlebe Fernsehen neu in unserer Mediathek.</p>
     </div>
 
-    <div class="feature-card" onclick="location.href='filme.html'">
-        <span class="status-tag" style="background: #fff; color: #000;">Productions</span>
-        <img src="Logo.png" alt="EcoStudios">
+    <div class="modern-card" onclick="location.href='filme.html'">
+        <span class="badge" style="background: #fff; color: #000;">Productions</span>
+        <img src="Logo.png" class="card-icon">
         <h3>Film Studio</h3>
-        <p>Von High-End Commercials bis zu Spielfilmen. Erfahre mehr über unsere aktuellen Projekte.</p>
+        <p>Von High-End Commercials bis zu Spielfilmen. Unsere aktuellen Projekte im Überblick.</p>
     </div>
 </main>
 
-<footer>
-    &copy; 2026 ECOSTUDIOS BROADCASTING GROUP. All rights reserved.
-</footer>
+<footer>&copy; 2026 ECOSTUDIOS GROUP</footer>
 
 </body>
 </html>
