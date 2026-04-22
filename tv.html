@@ -1,14 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Eco TV - News & Mediathek</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* CSS hier identisch zu index.html, zusätzlich: */
+        .video-placeholder { background: #000; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: white; border-radius: 8px; }
+    </style>
+</head>
+<body>
 <div class="container">
-    <h1 style="text-align:center; text-transform:uppercase;">Eco TV Mediathek</h1>
-    <div style="background: #000; color: #fff; padding: 50px; text-align: center; border-radius: 8px;">
-        <div style="border: 2px solid #fff; padding: 40px; display: inline-block;">
-            <p>📺 LIVE-STREAM STARTEN</p>
-            <small>Aktuell: Eco News - Nachrichten aus der Region</small>
+    <h2 style="text-transform: uppercase;">Eco TV Live-Stream</h2>
+    <div class="video-placeholder">
+        <div style="text-align: center;">
+            <div style="font-size: 50px;">▶</div>
+            <p>LIVE-STREAM STARTEN</p>
         </div>
     </div>
-    
-    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
-        <div class="card"><div class="card-body"><h3>Letzte Sendung</h3><p>Reportage: Hinter den Kulissen</p></div></div>
-        <div class="card"><div class="card-body"><h3>Doku-Serie</h3><p>Eco Studios: Die Geschichte</p></div></div>
+    <div style="margin-top: 30px;">
+        <h3>Aktuelle Meldungen</h3>
+        <p>• Neue Dokumentation über das Saarland ab morgen verfügbar.</p>
+        <p>• Eco News: Sondersendung um 18:00 Uhr.</p>
     </div>
 </div>
+</body>
+</html>
